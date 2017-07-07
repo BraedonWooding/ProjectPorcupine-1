@@ -12,7 +12,7 @@ using ProjectPorcupine.Localization;
 using UnityEngine;
 using UnityEngine.UI;
 
-[MoonSharp.Interpreter.MoonSharpUserData]
+// MOON
 public class SpawnInventoryController
 {
     private GameObject spawnUI;

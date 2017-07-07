@@ -9,7 +9,6 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json;
 
 namespace ProjectPorcupine.Buildable.Components
@@ -47,7 +46,7 @@ namespace ProjectPorcupine.Buildable.Components
         [XmlElement("UseAnimation")]
         [JsonProperty("UseAnimation")]
         public List<UseAnimation> UsedAnimations { get; set; }
-        
+
         [XmlIgnore]
         public string CurrentAnimationName { get; private set; }
 
@@ -88,10 +87,10 @@ namespace ProjectPorcupine.Buildable.Components
                         {
                             ChangeAnimation(anim.Name);
                             break;
-                        }                        
+                        }
                     }
                 }
-            }            
+            }
         }
 
         public override void InitializePrototype(Furniture protoFurniture)
@@ -107,7 +106,7 @@ namespace ProjectPorcupine.Buildable.Components
                 ParentFurniture.Animation.SetState(UsedAnimations[0].Name);
                 DefaultAnimationName = CurrentAnimationName = UsedAnimations[0].Name;
             }
-            
+
             ParentFurniture.Changed += FurnitureChanged;
             ParentFurniture.IsOperatingChanged += (furniture) => SetDefaultAnimation(furniture.IsOperating);
         }
@@ -136,6 +135,6 @@ namespace ProjectPorcupine.Buildable.Components
             {
                 ChangeAnimation(DefaultAnimationName);
             }
-        }   
+        }
     }
 }

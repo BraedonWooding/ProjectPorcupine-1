@@ -8,10 +8,9 @@
 #endregion
 
 using System.Collections.Generic;
-using MoonSharp.Interpreter;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public class ShipManager
 {
     // The list of ships currently present in the world.

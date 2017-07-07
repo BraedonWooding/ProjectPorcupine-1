@@ -9,7 +9,6 @@
 
 using System;
 using System.Collections.Generic;
-using MoonSharp.Interpreter;
 using ProjectPorcupine.Localization;
 using UnityEngine;
 
@@ -20,13 +19,13 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
 public class OverlayMap : MonoBehaviour
-{   
+{
     /// <summary>
     /// Transparency of overlay.
     /// </summary>
     [Range(0, 1)]
     public float transparency = 0.8f;
-    
+
     /// <summary>
     /// Update interval (0 for every Update, inf for never).
     /// </summary>
@@ -272,7 +271,7 @@ public class OverlayMap : MonoBehaviour
             }
 
             bool loggedOnce = false;
-            valueAt = (x, y, z) => 
+            valueAt = (x, y, z) =>
             {
                 if (WorldController.Instance == null)
                 {
@@ -282,7 +281,9 @@ public class OverlayMap : MonoBehaviour
                 Tile tile = WorldController.Instance.GetTileAtWorldCoord(new Vector3(x, y, z));
 
                 DynValue result = FunctionsManager.Overlay.Call(descr.LuaFunctionName, new object[] { tile, World.Current });
-                double? value = result.CastToNumber();
+                //double? value = result.CastToNumber();
+                double? value = null;
+                // MOON
                 if (value == null)
                 {
                     if (loggedOnce == false)
@@ -290,10 +291,10 @@ public class OverlayMap : MonoBehaviour
                         UnityDebugger.Debugger.LogError("OverlayMap", string.Format("The return value from the function named '{0}' was null for tile at ({1}, {2}, {3})", descr.LuaFunctionName, x, y, z));
                         loggedOnce = true;
                     }
-                    
+
                     return 0;
                 }
-                
+
                 return (int)value;
             };
 
@@ -431,7 +432,7 @@ public class OverlayMap : MonoBehaviour
         int textureWidth = colorMapArray.Length * colorMapWidth;
         int textureHeight = colorMapWidth;
         colorMapTexture = new Texture2D(textureWidth, textureHeight);
-        
+
         // Loop over each color in the palette and build a noisy texture.
         int n = 0;
         foreach (Color32 baseColor in colorMapArray)
@@ -467,7 +468,7 @@ public class OverlayMap : MonoBehaviour
         {
             UnityDebugger.Debugger.LogError("OverlayMap", "No color map texture setted!");
         }
-        
+
         if (!overlayColorMapLookup.ContainsKey(currentOverlay))
         {
             overlayColorMapLookup.Add(currentOverlay, new Dictionary<int, Color>());
@@ -479,7 +480,7 @@ public class OverlayMap : MonoBehaviour
         int textureWidth = sizeX;
         int textureHeight = sizeY;
         Color[] pixels = new Color[textureHeight * textureWidth];
-        
+
         for (int y = 0; y < sizeY; y++)
         {
             for (int x = 0; x < sizeX; x++)
@@ -529,7 +530,7 @@ public class OverlayMap : MonoBehaviour
         newNormals = new Vector3[sizePixelX * sizePixelY];
         newUV = new Vector2[sizePixelX * sizePixelY];
         newTriangles = new int[(sizePixelX - 1) * (sizePixelY - 1) * 6];
-        
+
         for (int y = 0; y < sizePixelY; y++)
         {
             for (int x = 0; x < sizePixelX; x++)

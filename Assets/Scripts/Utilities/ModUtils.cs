@@ -6,13 +6,11 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-
-using MoonSharp.Interpreter;
 using ProjectPorcupine.Buildable.Components;
 using ProjectPorcupine.PowerNetwork;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public static class ModUtils
 {
     private static string defaultLogChannel = "ModUtility";

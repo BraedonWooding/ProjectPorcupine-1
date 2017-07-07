@@ -10,12 +10,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Scheduler;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[MoonSharpUserData]
+// MOON
 public class TradeController
 {
     private readonly ScheduledEvent traderVisitEvaluationEvent;
@@ -59,7 +58,7 @@ public class TradeController
         SpriteRenderer spriteRenderer = go.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = SpriteManager.GetSprite("Trader", prototype.AnimationIdle.CurrentFrameName);
         spriteRenderer.sortingLayerName = "TradeShip";
-        
+
         // TODO: Look into passing more of the work of calling a tradeship off to the controller
         controller.Init(leavingCoords: new Vector3(100, 50, 0), landingCoords: new Vector3(landingPad.Tile.X + 1, landingPad.Tile.Y + 1, 0), speed: 5f, trader: trader, animationIdle: prototype.AnimationIdle.Clone(), animationFlying: prototype.AnimationFlying.Clone(), renderer: spriteRenderer);
     }

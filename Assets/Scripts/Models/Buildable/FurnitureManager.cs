@@ -10,11 +10,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public class FurnitureManager : IEnumerable<Furniture>
 {
     private List<Furniture> furnitures;

@@ -9,7 +9,6 @@
 
 using System;
 using System.Xml;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 
 namespace Scheduler
@@ -34,7 +33,7 @@ namespace Scheduler
     /// The scheduler is solely responsible for wrapping Lua functions in delegates
     /// for handling by the events.
     /// </summary>
-    [MoonSharpUserData]
+    // MOON
     public class ScheduledEvent : IPrototypable
     {
         /// <summary>

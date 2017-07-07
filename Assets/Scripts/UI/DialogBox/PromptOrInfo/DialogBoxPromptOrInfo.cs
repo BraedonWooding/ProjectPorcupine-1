@@ -6,9 +6,7 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-
 using System;
-using MoonSharp.Interpreter;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +14,7 @@ using UnityEngine.UI;
 /// Can be used to create message boxes with info to the user (with an OK button to close or none)
 /// or prompt dialogs with a choice of "Yes", "No" and/or "Cancel" buttons.
 /// </summary>
-[MoonSharpUserData]
+// MOON
 public class DialogBoxPromptOrInfo : DialogBox
 {
     private float standardWidth = 320f;
@@ -52,6 +50,10 @@ public class DialogBoxPromptOrInfo : DialogBox
         }
     }
 
+    public class Table
+    {
+    }
+    // MOON
     public void SetButtons(Table buttons)
     {
         Transform buttonsGO = gameObject.transform.Find("Buttons");
@@ -61,7 +63,7 @@ public class DialogBoxPromptOrInfo : DialogBox
         {
             button.gameObject.SetActive(false);
         }
-
+        /*
         UnityDebugger.Debugger.Log("ModDialogBox", "Table length:" + buttons.Length.ToString());
         for (int i = 1; i <= buttons.Length; i++)
         {
@@ -81,6 +83,7 @@ public class DialogBoxPromptOrInfo : DialogBox
                     break;
             }
         }
+        */
     }
 
     /// <summary>

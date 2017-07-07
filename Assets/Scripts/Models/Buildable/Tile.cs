@@ -6,11 +6,9 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Entities;
 using ProjectPorcupine.Localization;
@@ -25,7 +23,7 @@ public enum Enterability
     Soon
 }
 
-[MoonSharpUserData]
+// MOON
 [System.Diagnostics.DebuggerDisplay("Tile {X},{Y},{Z}")]
 public class Tile : ISelectable, IContextActionProvider, IComparable, IEquatable<Tile>
 {

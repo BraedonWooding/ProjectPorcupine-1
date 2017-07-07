@@ -9,13 +9,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Entities;
 using ProjectPorcupine.Pathfinding;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public class InventoryManager
 {
     private static readonly string InventoryManagerLogChanel = "InventoryManager";

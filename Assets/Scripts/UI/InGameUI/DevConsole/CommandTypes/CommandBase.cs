@@ -9,7 +9,6 @@
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
-using MoonSharp.Interpreter;
 using UnityEngine;
 
 namespace DeveloperConsole.Core
@@ -17,7 +16,7 @@ namespace DeveloperConsole.Core
     /// <summary>
     /// A command base that all commands derive from.
     /// </summary> 
-    [MoonSharpUserData]
+    // MOON
     public abstract class CommandBase
     {
         /// <summary>

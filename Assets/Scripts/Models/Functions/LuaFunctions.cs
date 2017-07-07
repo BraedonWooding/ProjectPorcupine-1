@@ -6,19 +6,23 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-
 using System;
-using System.Collections.Generic;
-using MoonSharp.Interpreter;
 using ProjectPorcupine.PowerNetwork;
+using SLua;
 
+[CustomLuaClass]
 public class LuaFunctions : IFunctions
 {
-    protected Script script;
+    protected LuaSvr script;
     private string scriptName;
 
     public LuaFunctions()
     {
+        script = new LuaSvr();
+
+
+        // MOON
+        /*
         // Tell the LUA interpreter system to load all the classes
         // that we have marked as [MoonSharpUserData]
         UserData.RegisterAssembly();
@@ -45,16 +49,21 @@ public class LuaFunctions : IFunctions
         RegisterGlobal(typeof(ProjectPorcupine.Jobs.RequestedItem));
         RegisterGlobal(typeof(DeveloperConsole.DevConsole));
         RegisterGlobal(typeof(Settings));
+        */
     }
 
     public bool HasFunction(string name)
     {
-        return name != null && script.Globals[name] != null;
+        return false;
+        // MOON
+        //return name != null && script.Globals[name] != null;
     }
 
     public bool HasConstructor(string className)
     {
-        return className != null && script.Globals[className] != null;
+        return false;
+        // MOON
+        //return className != null && script.Globals[className] != null;
     }
 
     /// <summary>
@@ -65,6 +74,9 @@ public class LuaFunctions : IFunctions
     public bool LoadScript(string text, string scriptName)
     {
         this.scriptName = scriptName;
+
+        // MOON
+        /*
         try
         {
             script.DoString(text, script.Globals);
@@ -74,6 +86,7 @@ public class LuaFunctions : IFunctions
             UnityDebugger.Debugger.LogError("Lua", "[" + scriptName + "] LUA Parse error: " + e.DecoratedMessage);
             return false;
         }
+        */
 
         return true;
     }
@@ -90,12 +103,16 @@ public class LuaFunctions : IFunctions
 
     public T Call<T>(string functionName, params object[] args)
     {
-        return Call(functionName, args).ToObject<T>();
+        return default(T);
+        // MOON
+        //return Call(functionName, args).ToObject<T>();
     }
 
     public DynValue CreateInstance(object fromObject)
     {
-        return DynValue.FromObject(script, fromObject);
+        return new DynValue();
+        // MOON
+        //return DynValue.FromObject(script, fromObject);
     }
 
     public T CreateInstance<T>(string className, params object[] arguments)
@@ -115,6 +132,8 @@ public class LuaFunctions : IFunctions
     /// <param name="args">Arguments.</param>
     private DynValue Call(string functionName, bool throwError, params object[] args)
     {
+        return new DynValue();
+        /*
         try
         {
             return ((Closure)script.Globals[functionName]).Call(args);
@@ -129,6 +148,7 @@ public class LuaFunctions : IFunctions
             UnityDebugger.Debugger.LogError("Lua", "[" + scriptName + "] Something else went wrong: " + e.Message);
             return null;
         }
+        */
     }
 
     /// <summary>
@@ -137,6 +157,6 @@ public class LuaFunctions : IFunctions
     /// <param name="type">Class typeof.</param>
     private void RegisterGlobal(Type type)
     {
-        script.Globals[type.Name] = type;
+        //script.Globals[type.Name] = type;
     }
 }

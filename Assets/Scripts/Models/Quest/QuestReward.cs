@@ -7,9 +7,8 @@
 // ====================================================
 #endregion
 using System.Xml;
-using MoonSharp.Interpreter;
 
-[MoonSharpUserData]
+// MOON
 public class QuestReward
 {
     public string Description { get; set; }

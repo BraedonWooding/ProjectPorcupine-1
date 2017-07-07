@@ -6,16 +6,14 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-
 using System.Collections.Generic;
 using System.Xml;
-using MoonSharp.Interpreter;
 
 /// <summary>
 /// This class handles LUA actions take in response to events triggered within C# or LUA. For each event name (e.g. OnUpdate, ...) there
 /// is a list of LUA function that are registered and will be called once the event with that name is fired.
 /// </summary>
-[MoonSharpUserData]
+// MOON
 public class EventActions
 {
     /// <summary>

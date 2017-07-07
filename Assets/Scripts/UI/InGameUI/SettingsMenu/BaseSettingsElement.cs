@@ -11,7 +11,7 @@ using System;
 /// <summary>
 /// A base UI element.
 /// </summary>
-[MoonSharp.Interpreter.MoonSharpUserData]
+// MOON
 public abstract class BaseSettingsElement : BaseUIElement
 {
     /// <summary>

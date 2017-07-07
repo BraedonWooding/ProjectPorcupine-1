@@ -9,14 +9,13 @@
 
 using System.Collections.Generic;
 using System.IO;
-using MoonSharp.Interpreter;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
 /// This will just keep a reference to all the dialog boxes since there inactive on start you cant find them.
 /// </summary>
-[MoonSharpUserData]
+// MOON
 public class DialogBoxManager : MonoBehaviour
 {
     public DialogBoxJobList dialogBoxJobList;

@@ -10,7 +10,6 @@
 using System;
 using System.Collections.Generic;
 using System.Xml;
-using MoonSharp.Interpreter;
 using UnityEngine;
 
 public enum BerthDirection
@@ -23,7 +22,7 @@ public enum ShipState
     WRAPPED, UNWRAPPED
 }
 
-[MoonSharpUserData]
+// MOON
 public class Ship : IPrototypable
 {
     private ShipManager shipManager;

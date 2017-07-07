@@ -9,10 +9,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 
-[MoonSharpUserData]
+// MOON
 public class Parameter
 {
     // Name is primarily to simplify writing to XML, and will be the same as the key used to access it in a higher up Parameter when read from XML

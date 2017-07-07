@@ -8,13 +8,12 @@
 #endregion
 using System.Collections.Generic;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace ProjectPorcupine.Rooms
 {
-    [MoonSharpUserData]
+    // MOON
     public class Room
     {
         // private Dictionary<string, string> deltaGas;

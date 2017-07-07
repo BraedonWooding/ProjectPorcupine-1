@@ -9,7 +9,6 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json;
 using ProjectPorcupine.Localization;
 using ProjectPorcupine.PowerNetwork;
@@ -20,9 +19,9 @@ namespace ProjectPorcupine.Buildable.Components
     [JsonObject(MemberSerialization.OptIn)]
     [XmlRoot("Component")]
     [BuildableComponentName("FluidConnection")]
-    [MoonSharpUserData]
+    // MOON
     public class FluidConnection : BuildableComponent, IPluggable
-    {       
+    {
         public FluidConnection()
         {
             SubType = string.Empty;
@@ -123,10 +122,10 @@ namespace ProjectPorcupine.Buildable.Components
             get { return IsStorage && StoredAmount.IsZero(); }
         }
 
-        public string UtilityType 
-        { 
-            get 
-            { 
+        public string UtilityType
+        {
+            get
+            {
                 return "Fluid";
             }
         }
@@ -183,7 +182,7 @@ namespace ProjectPorcupine.Buildable.Components
         }
 
         public bool OutputIsNeeded { get; set; }
-       
+
         public bool AllRequirementsFulfilled
         {
             get
@@ -226,7 +225,7 @@ namespace ProjectPorcupine.Buildable.Components
         }
 
         public override IEnumerable<string> GetDescription()
-        {           
+        {
             string powerColor = IsRunning ? "lime" : "red";
             string status = IsRunning ? "online" : "offline";
             yield return LocalizationTable.GetLocalization("fluid_grid_status_" + status, powerColor);
@@ -284,7 +283,7 @@ namespace ProjectPorcupine.Buildable.Components
 
             OnReconnecting();
 
-            ParentFurniture.Removed += FluidConnectionRemoved;           
+            ParentFurniture.Removed += FluidConnectionRemoved;
         }
 
         private void FluidConnectionRemoved(Furniture obj)
@@ -298,7 +297,7 @@ namespace ProjectPorcupine.Buildable.Components
             // TODO: Make this not a Universal Connection
             World.Current.FluidNetwork.PlugIn(this);
         }
-        
+
         [Serializable]
         [JsonObject(MemberSerialization.OptOut)]
         public class FluidConnectionParameterDefinitions

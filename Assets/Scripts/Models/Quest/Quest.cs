@@ -8,9 +8,8 @@
 #endregion
 using System.Collections.Generic;
 using System.Xml;
-using MoonSharp.Interpreter;
 
-[MoonSharpUserData]
+// MOON
 public class Quest : IPrototypable
 {
     public string Name { get; set; }
@@ -36,7 +35,7 @@ public class Quest : IPrototypable
     {
         Name = reader_parent.GetAttribute("Name");
         Goals = new List<QuestGoal>();
-        Rewards = new List<QuestReward>();   
+        Rewards = new List<QuestReward>();
         PreRequiredCompletedQuest = new List<string>();
 
         XmlReader reader = reader_parent.ReadSubtree();
@@ -74,7 +73,7 @@ public class Quest : IPrototypable
                     }
 
                     break;
-                case "Rewards": 
+                case "Rewards":
                     XmlReader reward_reader = reader.ReadSubtree();
                     while (reward_reader.Read())
                     {

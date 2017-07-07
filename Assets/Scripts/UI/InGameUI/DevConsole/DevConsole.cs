@@ -11,7 +11,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using DeveloperConsole.Core;
-using MoonSharp.Interpreter;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +24,7 @@ namespace DeveloperConsole
     /// <returns> The parsed value of the arguments.  Null if arguments are wrong. </returns>
     public delegate object ParseDelegate(string args);
 
-    [MoonSharpUserData]
+    // MOON
     public class DevConsole : MonoBehaviour
     {
         /// <summary>

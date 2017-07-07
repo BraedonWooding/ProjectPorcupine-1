@@ -11,13 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Entities;
 
 // Inventory are things that are lying on the floor/stockpile, like a bunch of metal bars
 // or potentially a non-installed copy of furniture (e.g. a cabinet still in the box from Ikea).
-[MoonSharpUserData]
+// MOON
 [System.Diagnostics.DebuggerDisplay("Inventory {ObjectType} {StackSize}/{MaxStackSize}")]
 public class Inventory : ISelectable, IContextActionProvider, IPrototypable
 {

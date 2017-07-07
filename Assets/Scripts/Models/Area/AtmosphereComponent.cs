@@ -6,19 +6,14 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using MoonSharp.Interpreter;
-using ProjectPorcupine.Rooms;
 using UnityEngine;
 
 /// <summary>
 /// An atmosphere component which controls gas and temperature.
 /// </summary>
-[MoonSharpUserData]
+// MOON
 public class AtmosphereComponent
 {
     /// <summary>

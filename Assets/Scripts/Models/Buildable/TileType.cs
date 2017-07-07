@@ -9,11 +9,10 @@
 using System;
 using System.Collections.Generic;
 using System.Xml;
-using MoonSharp.Interpreter;
 using ProjectPorcupine.Jobs;
 using ProjectPorcupine.OrderActions;
 
-[MoonSharpUserData]
+// MOON
 public class TileType : IPrototypable, IEquatable<TileType>
 {
     /// <summary>
@@ -151,11 +150,15 @@ public class TileType : IPrototypable, IEquatable<TileType>
             return true;
         }
 
-        DynValue value = FunctionsManager.TileType.Call(CanBuildHereLua, tile);
+        // MOON
+        //DynValue value = FunctionsManager.TileType.Call(CanBuildHereLua, tile);
+        /*
+        return false;
         if (value != null)
         {
             return value.Boolean;
         }
+        */
 
         UnityDebugger.Debugger.Log("Lua", "Found no lua function " + CanBuildHereLua);
         return false;

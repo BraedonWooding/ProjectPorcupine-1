@@ -8,15 +8,13 @@
 #endregion
 using System.IO;
 using System.Threading;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Entities;
 using Scheduler;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-[MoonSharpUserData]
+// MOON
 public class WorldController : MonoBehaviour
 {
     [SerializeField]

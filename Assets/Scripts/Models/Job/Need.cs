@@ -8,11 +8,10 @@
 #endregion
 using System.Collections.Generic;
 using System.Xml;
-using MoonSharp.Interpreter;
 
 namespace ProjectPorcupine.Entities
 {
-    [MoonSharpUserData]
+    // MOON
     public class Need : IPrototypable
     {
         private bool highToLow = true;

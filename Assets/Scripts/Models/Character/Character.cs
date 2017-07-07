@@ -8,8 +8,6 @@
 #endregion
 using System;
 using System.Collections.Generic;
-using System.Xml;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Localization;
 using UnityEngine;
@@ -30,7 +28,7 @@ namespace ProjectPorcupine.Entities
     /// Later, the Character class will likely be refactored (possibly with
     /// sub-classes or interfaces) to support friendly workers, enemies, etc...
     /// </summary>
-    [MoonSharpUserData]
+    // MOON
     public class Character : ISelectable, IContextActionProvider, IUpdatable
     {
         /// Unique ID of the character.

@@ -8,10 +8,9 @@
 #endregion
 using System.Collections.Generic;
 using System.Xml;
-using MoonSharp.Interpreter;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public class GameEvent : IPrototypable
 {
     private List<string> preconditions;
@@ -98,7 +97,8 @@ public class GameEvent : IPrototypable
         foreach (string precondition in preconditions)
         {
             // Call lua precondition it should return 1 if met otherwise 0
-            conditionsMet += (int)FunctionsManager.GameEvent.Call(precondition, this, deltaTime).Number;
+            // MOON
+            //conditionsMet += (int)FunctionsManager.GameEvent.Call(precondition, this, deltaTime).Number;
         }
 
         if (conditionsMet >= preconditions.Count && executed == false && (MaxRepeats <= 0 || repeats < MaxRepeats))

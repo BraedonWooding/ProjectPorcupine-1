@@ -9,13 +9,12 @@
 
 using System;
 using System.Xml;
-using MoonSharp.Interpreter;
 using ProjectPorcupine.Localization;
 
 /// <summary>
 /// Contains the description of a single overlay type. Contains LUA function name, id and coloring details.
 /// </summary>
-[MoonSharpUserData]
+// MOON
 public class OverlayDescriptor : IPrototypable
 {
     public OverlayDescriptor()

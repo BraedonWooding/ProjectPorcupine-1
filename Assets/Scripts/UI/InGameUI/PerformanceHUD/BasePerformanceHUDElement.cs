@@ -12,7 +12,7 @@ using System;
 /// Just holds a simple text UI component that can be access either through the public value "text"
 /// or throught he function call changeText.
 /// </summary>
-[MoonSharp.Interpreter.MoonSharpUserData]
+// MOON
 public abstract class BasePerformanceHUDComponent : BaseUIElement
 {
     public event EventHandler UpdateHandler;

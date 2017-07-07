@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json;
 using ProjectPorcupine.Localization;
 using ProjectPorcupine.PowerNetwork;
@@ -21,9 +20,9 @@ namespace ProjectPorcupine.Buildable.Components
     [JsonObject(MemberSerialization.OptIn)]
     [XmlRoot("Component")]
     [BuildableComponentName("PowerConnection")]
-    [MoonSharpUserData]
+    // MOON
     public class PowerConnection : BuildableComponent, IPluggable
-    {       
+    {
         public PowerConnection()
         {
         }
@@ -127,7 +126,7 @@ namespace ProjectPorcupine.Buildable.Components
         [XmlElement("RunConditions")]
         [JsonProperty("RunConditions")]
         public Conditions RunConditions { get; set; }
-        
+
         [XmlIgnore]
         public float StoredAmount
         {
@@ -164,10 +163,10 @@ namespace ProjectPorcupine.Buildable.Components
             get { return IsStorage && StoredAmount.IsZero(); }
         }
 
-        public string UtilityType 
-        { 
-            get 
-            { 
+        public string UtilityType
+        {
+            get
+            {
                 return "Power";
             }
         }
@@ -183,7 +182,7 @@ namespace ProjectPorcupine.Buildable.Components
             {
             }
         }
-        
+
         public bool IsFull
         {
             get { return IsStorage && StoredAmount.AreEqual(Provides.Capacity); }
@@ -230,7 +229,7 @@ namespace ProjectPorcupine.Buildable.Components
         public bool AllRequirementsFulfilled
         {
             get
-            {                
+            {
                 if (RunConditions != null)
                 {
                     return AreParameterConditionsFulfilled(RunConditions.ParamConditions);
@@ -241,7 +240,7 @@ namespace ProjectPorcupine.Buildable.Components
                 }
             }
         }
-        
+
         public override BuildableComponent Clone()
         {
             return new PowerConnection(this);
@@ -291,12 +290,12 @@ namespace ProjectPorcupine.Buildable.Components
             // store the actual efficiency for other components to use
             if (IsConsumer && Requires.CanUseVariableEfficiency)
             {
-                Efficiency = World.Current.PowerNetwork.GetEfficiency(this);                
-            }            
+                Efficiency = World.Current.PowerNetwork.GetEfficiency(this);
+            }
         }
-        
+
         public override IEnumerable<string> GetDescription()
-        {           
+        {
             string powerColor = IsConnected ? "lime" : "red";
             string status = IsConnected ? "connected" : "not connected";
             yield return string.Format("Power grid: <color={0}>{1}</color>", powerColor, status); // TODO: localization 
@@ -370,9 +369,9 @@ namespace ProjectPorcupine.Buildable.Components
 
             OnReconnecting();
 
-            ParentFurniture.Removed += PowerConnectionRemoved;           
+            ParentFurniture.Removed += PowerConnectionRemoved;
         }
-        
+
         private void PowerConnectionRemoved(Furniture obj)
         {
             World.Current.PowerNetwork.Unplug(this);

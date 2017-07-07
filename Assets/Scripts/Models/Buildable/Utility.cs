@@ -10,8 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
-using MoonSharp.Interpreter;
-using MoonSharp.Interpreter.Interop;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Entities;
 using ProjectPorcupine.OrderActions;
@@ -21,7 +19,7 @@ using UnityEngine;
 /// <summary>
 /// InstalledObjects are things like walls, doors, and utility (e.g. a sofa).
 /// </summary>
-[MoonSharpUserData]
+// MOON
 public class Utility : ISelectable, IPrototypable, IContextActionProvider, IBuildable
 {
     private bool gridUpdatedThisFrame = false;
@@ -282,8 +280,10 @@ public class Utility : ISelectable, IPrototypable, IContextActionProvider, IBuil
             return Type;
         }
 
-        DynValue ret = FunctionsManager.Utility.Call(getSpriteNameAction, this);
-        return ret.String;
+        // MOON
+        //DynValue ret = FunctionsManager.Utility.Call(getSpriteNameAction, this);
+        //return ret.String;
+        return null;
     }
 
     public T GetOrderAction<T>() where T : OrderAction
@@ -705,7 +705,7 @@ public class Utility : ISelectable, IPrototypable, IContextActionProvider, IBuil
         FunctionsManager.Utility.Call(action.Parameter, this, character);
     }
 
-    [MoonSharpVisible(true)]
+    // MOON VISIBLE TRUE
     private void UpdateOnChanged(Utility util)
     {
         if (Changed != null)

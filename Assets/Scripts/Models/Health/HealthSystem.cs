@@ -7,10 +7,9 @@
 // ====================================================
 #endregion
 using System;
-using MoonSharp.Interpreter;
 using ProjectPorcupine.Localization;
 
-[MoonSharpUserData]
+// MOON
 [Serializable]
 public class HealthSystem
 {
@@ -134,7 +133,7 @@ public class HealthSystem
         else
         {
             return LocalizationTable.GetLocalization("hit_points", "not_applicable_shorthand");
-        }  
+        }
     }
 
     private void EvaluateHealthIncrease(float value)

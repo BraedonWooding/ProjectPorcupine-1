@@ -12,7 +12,6 @@ using System.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Serialization;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -72,28 +71,28 @@ namespace ProjectPorcupine.Buildable.Components
             }
         }
 
-        public bool Initialized 
-        { 
-            get 
-            { 
-                return initialized; 
-            } 
+        public bool Initialized
+        {
+            get
+            {
+                return initialized;
+            }
         }
 
-        public virtual bool RequiresSlowUpdate 
-        { 
-            get 
-            { 
-                return false; 
-            } 
+        public virtual bool RequiresSlowUpdate
+        {
+            get
+            {
+                return false;
+            }
         }
 
-        public virtual bool RequiresFastUpdate 
-        { 
-            get 
-            { 
-                return false; 
-            } 
+        public virtual bool RequiresFastUpdate
+        {
+            get
+            {
+                return false;
+            }
         }
 
         [XmlIgnore]
@@ -266,8 +265,9 @@ namespace ProjectPorcupine.Buildable.Components
                 }
                 else if (!string.IsNullOrEmpty(sourceDataInfo.FromFunction))
                 {
-                    DynValue ret = FunctionsManager.Furniture.Call(sourceDataInfo.FromFunction, furniture);
-                    retString = ret.String;
+                    // MOON
+                    //DynValue ret = FunctionsManager.Furniture.Call(sourceDataInfo.FromFunction, furniture);
+                    //retString = ret.String;
                 }
                 else if (!string.IsNullOrEmpty(sourceDataInfo.FromParameter))
                 {
@@ -289,8 +289,9 @@ namespace ProjectPorcupine.Buildable.Components
                 }
                 else if (!string.IsNullOrEmpty(sourceDataInfo.FromFunction))
                 {
-                    DynValue ret = FunctionsManager.Furniture.Call(sourceDataInfo.FromFunction, furniture);
-                    retFloat = (float)ret.Number;
+                    // MOON
+                    //DynValue ret = FunctionsManager.Furniture.Call(sourceDataInfo.FromFunction, furniture);
+                    //retFloat = (float)ret.Number;
                 }
                 else if (!string.IsNullOrEmpty(sourceDataInfo.FromParameter))
                 {
@@ -336,7 +337,7 @@ namespace ProjectPorcupine.Buildable.Components
 
             public Conditions RunConditions { get; set; }
         }
-        
+
         [Serializable]
         [JsonObject(MemberSerialization.OptOut)]
         public class ParameterCondition
@@ -397,7 +398,7 @@ namespace ProjectPorcupine.Buildable.Components
             public int CapacityThresholds { get; set; }
 
             [XmlAttribute("canUseVariableEffiency")]
-            public bool CanUseVariableEfficiency { get; set; }            
+            public bool CanUseVariableEfficiency { get; set; }
         }
 
         [Serializable]

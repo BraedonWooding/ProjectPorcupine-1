@@ -11,8 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Mono.CSharp;
-using MoonSharp.Interpreter;
 
+// MOON
 public class CSharpFunctions : IFunctions
 {
     // this is just to support convertion of object to DynValue
@@ -126,8 +126,10 @@ public class CSharpFunctions : IFunctions
     /// <param name="args">Arguments.</param>
     public DynValue Call(string functionName, params object[] args)
     {
-        object ret = methods[functionName].Invoke(null, args);
-        return DynValue.FromObject(script, ret);
+        //object ret = methods[functionName].Invoke(null, args);
+        return new DynValue();
+        // MOON
+        //return DynValue.FromObject(script, ret);
     }
 
     /// <summary>
@@ -153,7 +155,9 @@ public class CSharpFunctions : IFunctions
 
     public DynValue CreateInstance(object fromObject)
     {
-        return DynValue.FromObject(script, fromObject);
+        return new DynValue();
+        // MOON
+        //return DynValue.FromObject(script, fromObject);
     }
 
     public T CreateInstance<T>(string className, params object[] arguments)

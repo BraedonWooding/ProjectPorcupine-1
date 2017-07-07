@@ -6,7 +6,12 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-using MoonSharp.Interpreter;
+
+// MOON
+public class DynValue
+{
+
+}
 
 public interface IFunctions
 {

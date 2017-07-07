@@ -11,8 +11,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using Animation;
-using MoonSharp.Interpreter;
-using MoonSharp.Interpreter.Interop;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Buildable.Components;
 using ProjectPorcupine.Entities;
@@ -25,7 +23,7 @@ using UnityEngine;
 /// <summary>
 /// InstalledObjects are things like walls, doors, and furniture (e.g. a sofa).
 /// </summary>
-[MoonSharpUserData]
+// MOON
 public class Furniture : ISelectable, IPrototypable, IContextActionProvider, IBuildable, IUpdatable
 {
     #region Private Variables
@@ -624,8 +622,10 @@ public class Furniture : ISelectable, IPrototypable, IContextActionProvider, IBu
             return Enterability.Yes;
         }
 
-        DynValue ret = FunctionsManager.Furniture.Call(isEnterableAction, this);
-        return (Enterability)ret.Number;
+        // MOON
+        //DynValue ret = FunctionsManager.Furniture.Call(isEnterableAction, this);
+        //return (Enterability)ret.Number;
+        return Enterability.Never;
     }
 
     public string GetDefaultSpriteName()
@@ -1117,8 +1117,10 @@ public class Furniture : ISelectable, IPrototypable, IContextActionProvider, IBu
         }
         else
         {
-            DynValue ret = FunctionsManager.Furniture.Call(getProgressInfoNameAction, this);
-            return ret.String;
+            // MOON
+            // DynValue ret = FunctionsManager.Furniture.Call(getProgressInfoNameAction, this);
+            //return ret.String;
+            return null;
         }
     }
 
@@ -1387,7 +1389,7 @@ public class Furniture : ISelectable, IPrototypable, IContextActionProvider, IBu
     #endregion
 
     #region OnChanges
-    [MoonSharpVisible(true)]
+    // MOON VISIBLE TRUE
     private void UpdateOnChanged(Furniture furn)
     {
         if (Changed != null)

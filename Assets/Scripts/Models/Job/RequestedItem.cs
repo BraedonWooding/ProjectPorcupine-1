@@ -6,13 +6,11 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-
-using MoonSharp.Interpreter;
 using UnityEngine;
 
 namespace ProjectPorcupine.Jobs
 {
-    [MoonSharpUserData]
+    // MOON
     public class RequestedItem
     {
         public RequestedItem(string type, int minAmountRequested, int maxAmountRequested)

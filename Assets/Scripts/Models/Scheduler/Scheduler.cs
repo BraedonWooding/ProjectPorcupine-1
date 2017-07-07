@@ -10,7 +10,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 
 namespace Scheduler
@@ -18,7 +17,7 @@ namespace Scheduler
     /// <summary>
     /// Generic scheduler class for tracking and dispatching ScheduledEvents.
     /// </summary>
-    [MoonSharpUserData]
+    // MOON
     public class Scheduler
     {
         private static Scheduler instance;

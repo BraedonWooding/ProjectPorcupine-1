@@ -6,13 +6,11 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-using System;
 using System.Collections.Generic;
-using MoonSharp.Interpreter;
 using ProjectPorcupine.Rooms;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public class TemperatureDiffusion
 {
     private float[,] diffusion;

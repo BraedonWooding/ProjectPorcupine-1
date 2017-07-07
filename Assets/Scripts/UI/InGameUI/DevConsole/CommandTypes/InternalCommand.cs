@@ -8,14 +8,13 @@
 #endregion
 using System;
 using System.Reflection;
-using MoonSharp.Interpreter;
 
 namespace DeveloperConsole.Core
 {
     /// <summary>
     /// A core class for Internal Commands.
     /// </summary>
-    [MoonSharpUserData]
+    // MOON
     public sealed class InternalCommand : CommandBase
     {
         /// <summary>

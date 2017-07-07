@@ -6,16 +6,13 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-
 using System;
 using System.Globalization;
-using MoonSharp.Interpreter;
-using UnityEngine;
 
 /// <summary>
 /// Holds temperature data in Kelvin but can be accessed in celsius, fahrenheit, and rankine.
 /// </summary>
-[MoonSharpUserData]
+// MOON
 public struct TemperatureValue : IFormattable
 {
     /// <summary>

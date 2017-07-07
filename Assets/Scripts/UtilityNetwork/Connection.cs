@@ -11,14 +11,13 @@ using System.Globalization;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using MoonSharp.Interpreter;
 
 namespace ProjectPorcupine.PowerNetwork
 {
     /// <summary>
     /// Represents connection to electric grid if furniture has connection specified it uses of produce power.
     /// </summary>
-    [MoonSharpUserData]
+    // MOON
     public class Connection : IXmlSerializable
     {
         private static readonly string InputRateAttributeName = "inputRate";

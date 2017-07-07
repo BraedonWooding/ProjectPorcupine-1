@@ -11,8 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
-using MoonSharp.Interpreter;
-using MoonSharp.Interpreter.Interop;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Entities;
 using ProjectPorcupine.Localization;
@@ -22,7 +20,7 @@ namespace ProjectPorcupine.Rooms
     /// <summary>
     /// Room Behaviors are functions added to specific rooms, such as an airlock, a dining room, or an abattoir.
     /// </summary>
-    [MoonSharpUserData]
+    // MOON
     public class RoomBehavior : ISelectable, IPrototypable, IContextActionProvider
     {
         /// <summary>
@@ -412,7 +410,7 @@ namespace ProjectPorcupine.Rooms
             return behaviorJson;
         }
 
-        [MoonSharpVisible(true)]
+        // MOON VISIBLE
         private void CallEventAction(string actionName, params object[] parameters)
         {
             EventActions.Trigger(actionName, this, parameters);
@@ -444,7 +442,7 @@ namespace ProjectPorcupine.Rooms
             FunctionsManager.RoomBehavior.Call(action.Parameter, this, character);
         }
 
-        [MoonSharpVisible(true)]
+        // MOON VISIBLE
         private void UpdateOnChanged(RoomBehavior util)
         {
             if (Changed != null)

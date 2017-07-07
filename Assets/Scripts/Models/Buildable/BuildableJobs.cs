@@ -10,10 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
-using MoonSharp.Interpreter;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public class BuildableJobs
 {
     private IBuildable buildable;

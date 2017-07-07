@@ -10,7 +10,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -19,7 +18,7 @@ namespace ProjectPorcupine.Entities
     /// <summary>
     /// Character manager that holds all the characters.
     /// </summary>
-    [MoonSharpUserData]
+    // MOON
     public class CharacterManager : IEnumerable<Character>
     {
         /// <summary>

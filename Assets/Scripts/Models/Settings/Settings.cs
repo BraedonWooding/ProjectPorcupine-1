@@ -10,11 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public static class Settings
 {
     //// Disabled cause not currently used, if used in future undisable

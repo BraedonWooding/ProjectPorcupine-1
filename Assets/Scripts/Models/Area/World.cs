@@ -9,7 +9,6 @@
 using System;
 using System.IO;
 using System.Linq;
-using MoonSharp.Interpreter;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ProjectPorcupine.Entities;
@@ -17,7 +16,7 @@ using ProjectPorcupine.PowerNetwork;
 using ProjectPorcupine.Rooms;
 using UnityEngine;
 
-[MoonSharpUserData]
+// MOON
 public class World
 {
     // TODO: Should this be also saved with the world data?

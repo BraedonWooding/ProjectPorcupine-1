@@ -10,11 +10,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using MoonSharp.Interpreter;
 using UnityEngine;
 using UnityEngine.UI;
 
-[MoonSharpUserData]
+// MOON
 public class ModDialogBox : DialogBox
 {
     public EventActions events;
