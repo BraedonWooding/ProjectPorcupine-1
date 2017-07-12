@@ -15,6 +15,11 @@ using Mono.CSharp;
 // MOON
 public class CSharpFunctions : IFunctions
 {
+    public class Script
+    {
+
+    }
+
     // this is just to support convertion of object to DynValue
     protected Script script;
 
