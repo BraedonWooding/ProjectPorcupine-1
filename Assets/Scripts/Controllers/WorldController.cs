@@ -66,6 +66,8 @@ public class WorldController : MonoBehaviour
     // The world and tile data.
     public World World { get; protected set; }
 
+    public bool Initialized { get; protected set; }
+
     #endregion
 
     public GameObject CircleCursorPrefab
@@ -115,6 +117,7 @@ public class WorldController : MonoBehaviour
         }
 
         SoundController = new SoundController(World);
+        Initialized = true;
     }
 
     public void Start()
